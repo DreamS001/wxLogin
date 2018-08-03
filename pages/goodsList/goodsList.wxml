@@ -1,0 +1,63 @@
+<!--pages/goodsList/goodsList.wxml-->
+<!-- <view class="category-tabs">
+  <view class="tab" wx:for="{{categorys}}" wx:key="name" wx:for-item="category">
+    <view class="tab-title {{currentIndex === index ? 'active':''}}" bindtap="switchSelectCond" data-group="{{category.name}}">
+      <text wx:if="{{category.selectedIndex <= 0}}">{{category.title}}</text>
+      <text wx:else>{{category.items[category.selectedIndex]}}</text>
+      <image class="arrow" src="../../images/arrow.png"></image>
+    </view>
+    <view class="line"></view>
+  </view>
+</view> -->
+
+<!-- <navigator target="miniProgram" app-id="wxeb490c6f9b154ef9" extra-data="{{data}}">会员卡开卡</navigator> -->
+
+<view class="class_first">
+  <!-- <import src="../common/marquee/marquee.wxml" />
+  <template is="marquee" data="{{...item}}" /> -->
+  <view class="title">2 出现白边后即显示</view>
+  <view class="example">
+    <view class="marquee_box">
+      <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}px;font-size: {{size}}px;">
+        <text>{{text}}</text>
+        <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;">{{text}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="class_second" style="height:{{second_height}}px">
+  <scroll-view class="scroll-view_H" scroll-y="ture" style="width: 100%;height:{{second_height}}px; " bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view id="green" class="scroll-view-item_H bc_green">1</view>
+    <view id="red"  class="scroll-view-item_H bc_red">1</view>
+    <view id="yellow" class="scroll-view-item_H bc_yellow">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">1</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+    <view id="blue" class="scroll-view-item_H bc_blue">2</view>
+  </scroll-view>
+</view>

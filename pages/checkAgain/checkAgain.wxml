@@ -1,0 +1,8 @@
+<!--pages/checkAgain/checkAgain.wxml-->
+<view class='textBox'>
+  <text class='title'>温馨提示！</text>
+  <text>为保证您的正常使用，请进行授权！</text>
+</view>
+<view class='btnBox'>
+  <button class='btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">重新授权</button>
+</view>

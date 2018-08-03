@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+
+<scroll-view class="container" scroll-y="true" bindscrolltolower="scrolltolower" lower-threshold="300" style="height:100%;">
+  <!-- 功能区 -->
+  <view class="function-area">
+    <view class="function-list">
+      <navigator url="../filter/filter" hover-class="navigator-hover">
+        <view class="function">
+          <block wx:if="userInfo.avatarUrl">
+            <image src="{{userInfo.avatarUrl}}"></image>
+            <!-- <image src="../../images/filter.png"></image> -->
+            <!-- <text>礼物精选</text> -->
+            <text>{{userInfo.nickName}}</text>
+            <text wx:if="{{userInfo.gender==1}}">男</text>
+            <text wx:elif="{{userInfo.gender==2}}">女</text>
+            <text wx:else>未知</text>
+          </block>
+          <block wx:else>
+            <image src="../../images/filter.png"></image>
+            <text>未授权，部分功能不可用</text>
+            <text>请授权，体验更好</text>
+          </block>
+        </view>
+      </navigator>
+      <navigator url="../gotogo/gotogo" hover-class="navigator-hover">
+        <view class="function no-border">
+          <image src="../../images/gotogo.png" style="width:88rpx;height:60rpx;"></image>
+          <text>逛一逛</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- meta列表 -->
+  <view class="metainfo-area">
+    <text class="tag" data-tag="攻略"></text>
+    <view class="up-list">
+      <block wx:for="{{meta_infos}}" wx:key="nid" wx:for-item="meta_info">
+        <view class="up-list-item">
+          <navigator url="../article/article?id={{meta_info.nid}}">
+            <view class="item-desc-container">
+              <block wx:if="{{meta_info.thumb_image_url}}">
+                <image class="item-img" src="{{meta_info.thumb_image_url}}" binderror="binderrorimg" data-errorimg="{{index}}"></image>
+              </block>
+              <block wx:else>
+                <image class="item-img" src="../../images/heart.png" binderror="binderrorimg" data-errorimg="{{index}}"></image>
+              </block>
+              <view class="info-view">
+                <text class="title">{{meta_info.title}}</text>
+                <view class="content"></view>
+                <view class="item-footer">
+                  <view class="item-footer-author">
+                    <!-- <image src="{{meta_info.author.pic}}" class="avatar"></image> -->
+                    <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+                    <text>{{meta_info.author.name}}</text>
+                  </view>
+                  <view class="item-footer-view">
+                    <image src="../../images/view.png" class="view"></image>
+                    <text>{{meta_info.read_count}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </block>
+      <import src="../common/loading.wxml" />
+      <template is="loading" data="{{done, text:'只有这些啦~'}}" />
+    </view>
+  </view>
+</scroll-view>

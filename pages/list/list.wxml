@@ -1,0 +1,14 @@
+<!--pages/list/list.wxml-->
+<view class="content-box" wx:for="{{list}}" wx:for-index="idx" wx:key="unique" wx:for-item="itemList">
+  <view class="listNum">
+    <image wx:if="{{idx==0}}" src="../../images/filter.png" class="icon"></image>
+    <image wx:elif="{{idx==1}}" src="../../images/filter.png" class="icon"></image>
+    <image wx:elif="{{idx==2}}" src="../../images/filter.png" class="icon"></image>
+    <text wx:else>{{idx+1}}</text>
+  </view>
+  <view class="listPic">
+    <image src="{{itemList.pic}}"></image>
+  </view>
+  <view class="listName">{{itemList.name}}</view>
+  <view class="listState">{{itemList.state}}</view>
+</view>

@@ -1,0 +1,12 @@
+<view class="imgBox">
+    <!-- 心跳 -->
+  <view class="bottomMiddleHeaderItemSubView">
+    <image src="../../images/heart.png" style="width:150rpx; height:150rpx;" animation="{{animationMiddleHeaderItem}}"></image>
+  </view>
+</view>
+<view class='textBox'>
+  <view class='welcome'>
+    <text>欢迎使用小程序</text>
+  </view>
+  <button class='btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">开始使用</button>
+</view>
